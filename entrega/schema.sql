@@ -9,7 +9,7 @@ CREATE TABLE public_location (
 );
 
 CREATE TABLE item (
-    id SERIAL,
+    id varchar(5),
     description_text text NOT NULL,
     location_name varchar(255) NOT NULL,
     latitude numeric(9, 6),
@@ -21,7 +21,7 @@ CREATE TABLE item (
 );
 
 CREATE TABLE anomaly (
-    id SERIAL,
+    id varchar(5),
     area varchar(45) NOT NULL,
     image_path varchar(253) NOT NULL,
     lang char(3) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE anomaly (
 );
 
 CREATE TABLE translation_anomaly (
-    id SERIAL,
+    id varchar(5),
     area2 varchar(45) NOT NULL,
     lang2 char(3) NOT NULL,
 
@@ -42,8 +42,8 @@ CREATE TABLE translation_anomaly (
 );
 
 CREATE TABLE duplicate (
-    item1 SERIAL,
-    item2 SERIAL,
+    item1 varchar(5),
+    item2 varchar(5),
     
     PRIMARY KEY (item1, item2),
     FOREIGN KEY (item1) REFERENCES item(id),
@@ -73,8 +73,8 @@ CREATE TABLE regular_user (
 );
 
 CREATE TABLE incident (
-    anomaly_id SERIAL,
-    item_id SERIAL,
+    anomaly_id varchar(5),
+    item_id varchar(5),
     user_email varchar(254),
 
     PRIMARY KEY (anomaly_id),
@@ -87,7 +87,7 @@ CREATE TABLE correction_proposal (
     user_email varchar(254),
     tmstmp timestamp NOT NULL,
     correction_text text NOT NULL,
-    nro SERIAL,
+    nro serial,
 
     UNIQUE(nro),
     PRIMARY KEY (user_email, nro),
@@ -96,8 +96,8 @@ CREATE TABLE correction_proposal (
 
 CREATE TABLE correction (
     user_email varchar(254),
-    anomaly_id SERIAL,
-    nro SERIAL,
+    anomaly_id varchar(5),
+    nro serial,
 
     PRIMARY KEY (user_email, nro, anomaly_id),
     FOREIGN KEY (user_email, nro) REFERENCES correction_proposal(user_email, nro),

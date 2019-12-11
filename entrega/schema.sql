@@ -62,14 +62,14 @@ CREATE TABLE qualified_user (
     user_email varchar(254),
 
     PRIMARY KEY (user_email),
-    FOREIGN KEY (user_email) REFERENCES user_table(user_email)
+    FOREIGN KEY (user_email) REFERENCES user_table(user_email) DEFERRABLE INITIALLY DEFERRED
 );
 
 CREATE TABLE regular_user (
     user_email varchar(254),
 
     PRIMARY KEY (user_email),
-    FOREIGN KEY (user_email) REFERENCES user_table(user_email)
+    FOREIGN KEY (user_email) REFERENCES user_table(user_email) DEFERRABLE INITIALLY DEFERRED
 );
 
 CREATE TABLE incident (

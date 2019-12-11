@@ -1,4 +1,4 @@
-SELECT count(*)
+SELECT d_utilizador.tipo, d_lingua.lingua, d_tempo.dia_da_semana, count(*)
     FROM f_anomalia
     NATURAL JOIN d_utilizador
     NATURAL JOIN d_lingua

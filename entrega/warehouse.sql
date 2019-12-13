@@ -1,3 +1,6 @@
+DROP TYPE user_type;
+DROP TYPE week_day;
+
 BEGIN;
 
 CREATE TYPE user_type AS ENUM ('regular', 'qualificado');
@@ -5,7 +8,7 @@ CREATE TYPE week_day AS ENUM (
     'Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo');
 
 CREATE TABLE d_utilizador (
-    id_utilizador integer NOT NULL,
+    id_utilizador serial,
     email varchar(254) NOT NULL,
     tipo user_type NOT NULL,
 
@@ -13,7 +16,7 @@ CREATE TABLE d_utilizador (
 );
 
 CREATE TABLE d_tempo (
-    id_tempo integer NOT NULL,
+    id_tempo serial,
     dia integer NOT NULL,
     dia_da_semana week_day NOT NULL,
     semana integer NOT NULL,
@@ -31,7 +34,7 @@ CREATE TABLE d_tempo (
 );
 
 CREATE TABLE d_local (
-    id_local integer NOT NULL,
+    id_local serial,
     latitude numeric(9, 6) NOT NULL,
     longitude numeric(8, 6) NOT NULL,
 
@@ -39,7 +42,7 @@ CREATE TABLE d_local (
 );
 
 CREATE TABLE d_lingua (
-    id_lingua integer NOT NULL,
+    id_lingua serial,
     lingua char(3) NOT NULL,
 
     PRIMARY KEY (id_lingua)

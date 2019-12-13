@@ -251,11 +251,11 @@ INSERT INTO anomaly VALUES (
 );
 
 INSERT INTO translation_anomaly VALUES ('00000', 'right', 'GER');
-INSERT INTO translation_anomaly VALUES ('01010', 'center', 'GER');
-INSERT INTO translation_anomaly VALUES ('31415', 'center', 'ENG');
-INSERT INTO translation_anomaly VALUES ('00012', 'left', 'FRA');
-INSERT INTO translation_anomaly VALUES ('00011', 'left', 'ITA');
-INSERT INTO translation_anomaly VALUES ('00006', 'left', 'ITA');
+INSERT INTO translation_anomaly VALUES ('01010', 'left', 'GER');
+INSERT INTO translation_anomaly VALUES ('31415', 'left', 'ENG');
+INSERT INTO translation_anomaly VALUES ('00012', 'center', 'FRA');
+INSERT INTO translation_anomaly VALUES ('00011', 'center', 'ITA');
+INSERT INTO translation_anomaly VALUES ('00006', 'center', 'ITA');
 
 INSERT INTO user_table VALUES ('super@user.com', 'admin');
 INSERT INTO user_table VALUES ('super2@user.com', 'admin');
